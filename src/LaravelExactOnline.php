@@ -333,9 +333,10 @@ class LaravelExactOnline
      */
     public function connection(): Connection
     {
-        if (! $this->connection) {
-            $this->connection = app()->make('Exact\Connection');
-        }
+        //** MVE: niet meer doen. Wij connecten zelf wel naar Exact Online */
+        //if (! $this->connection) {
+        //    $this->connection = app()->make('Exact\Connection');
+        //}
         return $this->connection;
     }
 
