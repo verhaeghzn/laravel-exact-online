@@ -330,13 +330,21 @@ class LaravelExactOnline
 
     /**
      * Return connection instance.
+     * Added by Michel Verhaegh
+     */
+    public function isConnected(): bool
+    {
+        return $this->connection ? true : false;
+    }
+
+    /**
+     * Return connection instance.
      */
     public function connection(): Connection
     {
-        //** MVE: niet meer doen. Wij connecten zelf wel naar Exact Online */
-        //if (! $this->connection) {
-        //    $this->connection = app()->make('Exact\Connection');
-        //}
+        if (! $this->connection) {
+            $this->connection = app()->make('Exact\Connection');
+        }
         return $this->connection;
     }
 
